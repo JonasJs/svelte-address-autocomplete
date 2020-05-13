@@ -1,7 +1,6 @@
 <script>
   import { createEventDispatcher } from 'svelte';
 
-  export let value;
   export let cepValue = '';
   export let streetValue = '';
   export let neighborhoodValue =  '';
@@ -34,7 +33,7 @@
         });
       }).catch(error => {
         sendCallback({
-          status: statusCode,
+          status: 400,
           message: error
         })
       })
@@ -43,17 +42,15 @@
 </script>
 
 <div class={ClassName}>
-  <div class="form-group">
-    <label>Cep: </label>
-    <input type="text" bind:value={cepValue} on:blur={onBlur}>
-  </div>
-  <slot></slot>
-</div>
 
-<style>
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 16px;
-  }
-</style>
+  <input type="text" bind:value={cepValue} on:blur={onBlur}>
+
+	<div class="from-group">
+		<slot name="cep">
+			<input class="missing" />
+		</slot>
+	</div>
+
+  <input type="text" bind:value={streetValue}>
+  <input type="text" bind:value={neighborhoodValue}>
+</div>
