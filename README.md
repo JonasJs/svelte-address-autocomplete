@@ -46,27 +46,18 @@ An example of how to use the library:
 </script>
 
 
-<main>
-  <div class="form">
-    <h1> Svelte Adress Autocomplete </h1>
-    <AdressAutocomplete on:callback={handleCallback} ClassName="newName">
-      <div class="form-group">
-        <label>Rua: </label>
-        <input type="text" name="rua" bind:value={adress.street} />
-      </div>
-    </AdressAutocomplete>
-  </div>
-</main>
+
+<div class="form">
+  <h1> Svelte Adress Autocomplete </h1>
+  <AdressAutocomplete on:callback={handleCallback} ClassName="newName">
+    <div class="form-group">
+      <label>Rua: </label>
+      <input type="text" name="rua" bind:value={adress.street} />
+    </div>
+  </AdressAutocomplete>
+</div>
 
 <style>
-  main {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
   .form-group {
     display: flex;
     flex-direction: column;
