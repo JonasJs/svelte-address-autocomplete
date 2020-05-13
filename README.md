@@ -38,7 +38,6 @@ An example of how to use the library:
 
   function handleCallback({detail}) {
     if(detail.data){
-      console.log(detail.data);
       adress = detail.data;
     } else {
       alert("Zip not found!");
