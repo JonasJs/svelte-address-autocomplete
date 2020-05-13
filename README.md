@@ -2,7 +2,8 @@
 
 [![npm version](https://badge.fury.io/js/svelte-address-autocomplete.svg)](https://www.npmjs.com/package/svelte-address-autocomplete)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/JonasJs/svelte-address-autocomplete/blob/master/LICENSE)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/github/jonasjs/svelte-adress-autocomplete.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jonasjs/svelte-adress-autocomplete/context:javascript)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/JonasJs/svelte-address-autocomplete.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/JonasJs/svelte-address-autocomplete/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/JonasJs/svelte-address-autocomplete.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/JonasJs/svelte-address-autocomplete/context:javascript)
 
 Adress Autocomplete Component to Svelte
 
@@ -44,9 +45,9 @@ An example of how to use the library:
     }
   }
 </script>
+```
 
-
-
+```html
 <div class="form">
   <h1> Svelte Adress Autocomplete </h1>
   <AdressAutocomplete on:callback={handleCallback} ClassName="newName">
@@ -56,7 +57,9 @@ An example of how to use the library:
     </div>
   </AdressAutocomplete>
 </div>
+```
 
+``` css
 <style>
   .form-group {
     display: flex;
@@ -87,7 +90,7 @@ Component props:
 
 Download stats for this NPM package
 
-[![NPM](https://nodei.co/npm/svelte-adress-autocomplete.png)](https://nodei.co/npm/svelte-adress-autocomplete/)
+[![NPM](https://nodei.co/npm/svelte-address-autocomplete.png)](https://nodei.co/npm/svelte-address-autocomplete/)
 
 ## License
 
