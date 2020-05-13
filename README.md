@@ -80,7 +80,7 @@ Component props:
 
 Download stats for this NPM package
 
-[![NPM](https://nodei.co/npm/svelte-adress-autocomplete.png)](https://nodei.co/npm/svelte-adress-autocomplete/)
+[![NPM](https://nodei.co/npm/svelte-address-autocomplete.png)](https://nodei.co/npm/svelte-address-autocomplete/)
 
 ## License
 
