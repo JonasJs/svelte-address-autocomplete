@@ -1,6 +1,11 @@
 # Svelte Adress Autocomplete
 
-[![npm version](https://badge.fury.io/js/svelte-address-autocomplete.svg)](https://www.npmjs.com/package/svelte-address-autocomplete) &bull; [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/JonasJs/svelte-address-autocomplete/blob/master/LICENSE) &bull;[![Dependencies](https://david-dm.org/jonasjs/svelte-adress-autocomplete.svg)](https://david-dm.org/jonasjs/svelte-adress-autocomplete) &bull;[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/github/jonasjs/svelte-adress-autocomplete.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jonasjs/svelte-adress-autocomplete/context:javascript)
+[![npm version](https://badge.fury.io/js/svelte-address-autocomplete.svg)](https://www.npmjs.com/package/svelte-address-autocomplete)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/JonasJs/svelte-address-autocomplete/blob/master/LICENSE)
+[![Dependencies](https://david-dm.org/jonasjs/svelte-adress-autocomplete.svg)](https://david-dm.org/jonasjs/svelte-adress-autocomplete)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/github/jonasjs/svelte-adress-autocomplete.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jonasjs/svelte-adress-autocomplete/context:javascript)
+
+
 
 Adress Autocomplete Component to Svelte
 
