@@ -13,9 +13,6 @@
   }
 
 
-  function handleCallbackTwo(event) {
-    autocompleteObj = event.detail.data
-  }
 </script>
 
 
@@ -31,8 +28,15 @@
   </div>
 
   <h1> Teste 2</h1>
-  <AdressAutocompleteTwo on:callback={handleCallbackTwo}>
-    <input type="password" bind:value={cepValue} slot="inputcep">
+  <AdressAutocompleteTwo
+    on:success={res => console.log(res)}
+    on:error={error => console.log(error)}
+
+    let:onBlur
+    cepValue={cepValue}
+  >
+    <input type="text" bind:value={cepValue} slot="cep" on:blur={onBlur}>
+    <input type="text" bind:value={streetValue} slot="rua">
   </AdressAutocompleteTwo>
 
 </main>

@@ -6,18 +6,19 @@
   export let neighborhoodValue =  '';
   export let ClassName = 'default';
 
-  let statusCode = 200;
-
   const dispatch = createEventDispatcher();
 
 
+  function sendSuccess(data) {
+    dispatch('error', data);
+  }
 
-  function sendCallback(message) {
-    dispatch('callback', message);
+  function sendError() {
+    dispatch("error", new Error("Zip not found !"));
   }
 
 
-  function onBlur() {
+  const onBlur = () => {
     if(cepValue !== ''){
       fetch(`https://viacep.com.br/ws/${cepValue}/json/`)
       .then((response) => {
@@ -27,30 +28,37 @@
       .then(data => {
         streetValue = data.logradouro;
         neighborhoodValue = data.bairro;
-        sendCallback({
-          status: 200,
+        sendSuccess({
           data,
         });
-      }).catch(error => {
-        sendCallback({
-          status: 400,
-          message: error
-        })
+      }).catch(() => {
+        sendError();
       })
     }
   }
+
 </script>
 
 <div class={ClassName}>
-
-  <input type="text" bind:value={cepValue} on:blur={onBlur}>
-
-	<div class="from-group">
-		<slot name="cep">
-			<input class="missing" />
+  <div class="from-group">
+		<slot name="cep" {onBlur}>
+			<input class="missing"  />
 		</slot>
 	</div>
 
-  <input type="text" bind:value={streetValue}>
-  <input type="text" bind:value={neighborhoodValue}>
+  <div class="from-group">
+		<slot name="Rua">
+			<input type="text" bind:value={streetValue} >
+		</slot>
+	</div>
+  <!-- <input type="text" bind:value={streetValue}>
+  <input type="text" bind:value={neighborhoodValue}> -->
 </div>
+
+<style>
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+  }
+</style>

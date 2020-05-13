@@ -1,7 +1,6 @@
 <script>
   import { createEventDispatcher } from 'svelte';
 
-  export let value;
   export let cepValue = '';
   export let streetValue = '';
   export let neighborhoodValue =  '';
