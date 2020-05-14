@@ -18,6 +18,7 @@ yarn add svelte-address-autocomplete
 <em>Note: to use this library in sapper, install as devDependency. See the [link](https://github.com/sveltejs/sapper-template#using-external-components).</em>
 
 ## Demo [Link](https://svelte-address-autocomplete.now.sh/)
+[![Checkout step 1](https://user-images.githubusercontent.com/11879767/81888697-4685a800-9578-11ea-8dee-5514da205eb8.png)](https://svelte-address-autocomplete.now.sh/)
 
 Local demo:
 
