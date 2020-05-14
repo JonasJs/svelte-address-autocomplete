@@ -18,6 +18,7 @@ yarn add svelte-address-autocomplete
 <em>Note: to use this library in sapper, install as devDependency. See the [link](https://github.com/sveltejs/sapper-template#using-external-components).</em>
 
 ## Demo [Link](https://svelte-address-autocomplete.now.sh/)
+
 [![Checkout step 1](https://user-images.githubusercontent.com/11879767/81888697-4685a800-9578-11ea-8dee-5514da205eb8.png)](https://svelte-address-autocomplete.now.sh/)
 
 Local demo:
@@ -49,17 +50,17 @@ An example of how to use the library:
 
 ```html
 <div class="form">
-  <h1> Svelte Adress Autocomplete </h1>
-  <AdressAutocomplete on:callback={handleCallback} ClassName="newName">
+  <h1>Svelte Adress Autocomplete</h1>
+  <AdressAutocomplete on:callback="{handleCallback}" ClassName="newName">
     <div class="form-group">
       <label>Rua: </label>
-      <input type="text" name="rua" bind:value={adress.street} />
+      <input type="text" name="rua" bind:value="{adress.street}" />
     </div>
   </AdressAutocomplete>
 </div>
 ```
 
-``` css
+```css
 <style>
   .form-group {
     display: flex;
@@ -85,6 +86,13 @@ Component props:
 | Prop     | Type | Description                       |
 | -------- | ---- | --------------------------------- |
 | callback | func | callback with address information |
+
+## Slot Properties
+
+| Prop  | Type   | Description         |
+| ----- | ------ | ------------------- |
+| data  | object | Address Information |
+| error | any    | Request exception   |
 
 ## NPM Statistics
 
