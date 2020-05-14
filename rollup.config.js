@@ -39,7 +39,7 @@ export default [
   },
   {
     input: "src/lib/index.svelte",
-    output: { file: pkg.main, format: "umd", name: "ErrorScreen" },
+    output: { file: pkg.main, format: "umd", name: "addressAutocomplete" },
     plugins: [svelte(), resolve(), commonjs()]
   },
   {
