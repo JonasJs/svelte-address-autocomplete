@@ -4,8 +4,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/JonasJs/svelte-address-autocomplete/blob/master/LICENSE)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/github/jonasjs/svelte-adress-autocomplete.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jonasjs/svelte-adress-autocomplete/context:javascript)
 
-
-
 Adress Autocomplete Component to Svelte
 
 ## Installation
@@ -35,8 +33,8 @@ An example of how to use the library:
 ```js
 <script>
   import AdressAutocomplete from "svelte-address-autocomplete";
-  
-  
+
+
   let zipCodeValue = "";
   let streetValue = "";
 
@@ -48,9 +46,9 @@ An example of how to use the library:
     } else {
       alert("Zip not found!")
     }
-  
+
   }
-  
+
 </script>
 
 <AdressAutocomplete on:callback={handleCallback} className="newName">
@@ -66,15 +64,15 @@ An example of how to use the library:
 
 Component props:
 
-| Prop         | Type   | Description                                  |
-| ------------ | ------ | -------------------------------------------- |
-| className    | string | Create a class to modify the component       |
+| Prop      | Type   | Description                            |
+| --------- | ------ | -------------------------------------- |
+| className | string | Create a class to modify the component |
 
 ## Events
 
-| Prop     | Type | Description                             |
-| -------  | ---- | --------------------------------------- |
-| callback | func | callback with address information       |
+| Prop     | Type | Description                       |
+| -------- | ---- | --------------------------------- |
+| callback | func | callback with address information |
 
 ## NPM Statistics
 

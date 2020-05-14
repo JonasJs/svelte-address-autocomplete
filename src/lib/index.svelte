@@ -2,38 +2,32 @@
   import { createEventDispatcher } from 'svelte';
 
   export let cepValue = '';
-  export let streetValue = '';
-  export let neighborhoodValue =  '';
-  export let ClassName = 'default';
-
-  let statusCode = 200;
+  export let className = 'default';
 
   const dispatch = createEventDispatcher();
 
-
-
-  function sendCallback(message) {
-    dispatch('callback', message);
+  function sendCallback(data) {
+    dispatch('callback', data);
   }
 
 
   function onBlur() {
     if(cepValue !== ''){
       fetch(`https://viacep.com.br/ws/${cepValue}/json/`)
-      .then((response) => {
-        statusCode = response.status;
-        return response.json(); 
-      })
-      .then(data => {
-        streetValue = data.logradouro;
-        neighborhoodValue = data.bairro;
+      .then((response) => response.json())
+      .then(({bairro, CEP, complemento, localidade, logradouro, uf}) => {
         sendCallback({
-          status: 200,
-          data,
+          data: {
+            neighborhood: bairro,
+            zipCode: CEP,
+            complement: complemento,
+            city: localidade,
+            street: logradouro,
+            fu: uf
+          }
         });
       }).catch(error => {
         sendCallback({
-          status: statusCode,
           message: error
         })
       })
@@ -41,7 +35,7 @@
   }
 </script>
 
-<div class={ClassName}>
+<div class={className}>
   <div class="form-group">
     <label>Cep: </label>
     <input type="text" bind:value={cepValue} on:blur={onBlur}>
