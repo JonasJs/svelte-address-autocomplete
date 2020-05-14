@@ -13,7 +13,7 @@
 </script>
 
 
-<main>
+<main class="container">
   <div class="form">
     <h1> Svelte Adress Autocomplete </h1>
     <AdressAutocomplete on:callback={handleCallback} ClassName="newName">
@@ -22,24 +22,12 @@
         <input type="text" name="rua" bind:value={adress.street} />
       </div>
     </AdressAutocomplete>
-  </div>
+  </div> 
 </main>
 
 <style>
-  main {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 16px;
-  }
-  .form :global(.form-group label) {
-    margin-bottom: 8px;
+
+  .container {
+
   }
 </style>
