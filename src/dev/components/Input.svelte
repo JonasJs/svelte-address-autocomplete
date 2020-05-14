@@ -38,7 +38,7 @@
             {/each}
         </select>
     {:else}
-        <input on:keyup on:change bind:value bind:this={inputElement} name={name || label}/>
+        <input on:keyup on:change on:blur bind:value bind:this={inputElement} name={name || label} />
     {/if}
 </div>
 

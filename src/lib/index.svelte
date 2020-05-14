@@ -36,10 +36,17 @@
 </script>
 
 <div class={className}>
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label>Cep: </label>
     <input type="text" bind:value={cepValue} on:blur={onBlur}>
+  </div> -->
+
+  <div class="from-group">
+    <slot name="zipeCode" {onBlur}>
+      <input type="text" >
+    </slot>
   </div>
+
   <slot {data} {error}></slot>
 </div>
 

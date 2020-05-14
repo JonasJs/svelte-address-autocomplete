@@ -55,14 +55,14 @@
 
     <div class="form-container">
       <h1 class="title">Customer Information</h1>
-      <AdressAutocomplete on:callback={handleCallback} ClassName="newName">
+      <AdressAutocomplete on:callback={handleCallback} ClassName="newName"  let:onBlur zipCode={address.zipCode}>
         <div class="row">
           <Input label="First name" bind:value={infos.firstName} />
           <Input label="Last Name" bind:value={infos.lastName} />
         </div>
         <div class="row">
           <Input type="select" label="Country" bind:value={infos.country} />
-          <Input label="Postal Code" bind:value={address.zipCode} />
+          <Input label="Postal Code" bind:value={address.zipCode} on:blur={onBlur} />
         </div>
         <Input label="Address" bind:value={address.street} />
         <div class="row">
@@ -207,5 +207,8 @@
     margin-top: 32px;
   }
 
+  @media (min-width:801px) {
+
+  }
 
 </style>
