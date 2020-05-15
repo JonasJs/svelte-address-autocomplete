@@ -1,6 +1,6 @@
 {
   "name": "svelte-address-autocomplete",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "svelte": "src/lib/index.svelte",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
