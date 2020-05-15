@@ -1,8 +1,14 @@
 <script>
   import { createEventDispatcher } from 'svelte';
 
-  export let cepValue = '';
-  export let className = 'default';
+  export let zipCodeValue = "";
+  export let className = "from-group";
+
+	$:{
+		if(zipCodeValue){
+			getCep(zipCodeValue)
+		}
+	}
 
   let data = null;
   let error = null;
@@ -11,11 +17,9 @@
   function sendCallback(data) {
     dispatch('callback', data);
   }
-
-
-  function onBlur() {
-    if(cepValue !== ''){
-      fetch(`https://viacep.com.br/ws/${cepValue}/json/`)
+	
+	function getCep(zipCode) {
+		fetch(`https://viacep.com.br/ws/${zipCode}/json/`)
       .then((response) => response.json())
       .then(({bairro, CEP, complemento, localidade, logradouro, uf}) => {
         data = {
@@ -31,17 +35,20 @@
         error = e;
         sendCallback({ message: e });
       })
+	}
+
+  function onBlur(e) {
+    if(e.target.value !== ''){
+      getCep(e.target.value)
     }
   }
 </script>
 
-<div class={className}>
-  <div class="form-group">
-    <label>Cep: </label>
-    <input type="text" bind:value={cepValue} on:blur={onBlur}>
+<slot {data} {error} {onBlur}>
+  <div class={className} >
+    <input type="text" on:blur={onBlur} >
   </div>
-  <slot {data} {error}></slot>
-</div>
+</slot>
 
 <style>
   .form-group {

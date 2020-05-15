@@ -1,12 +1,10 @@
-
-
-
 <script>
     import { onMount } from "svelte";
 
     export let name = "";
     export let label = "Tex Label";
     export let type= "text";
+    export let placeholder = "";
 
     export let value = "";
 	
@@ -38,7 +36,7 @@
             {/each}
         </select>
     {:else}
-        <input on:keyup on:change bind:value bind:this={inputElement} name={name || label}/>
+        <input on:blur bind:value bind:this={inputElement} {placeholder} name={name || label} />
     {/if}
 </div>
 
@@ -58,6 +56,7 @@
         color: #93979A;
     }
     input, select {
+        width: 100%;
         background: #FFFFFF;
         border: 1px solid #DDE3E8;
         box-sizing: border-box;
