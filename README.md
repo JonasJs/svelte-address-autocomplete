@@ -80,7 +80,12 @@ Component props:
 
 ```js
 {
-  neighborhood, zipCode, complement, city, street, fu;
+  neighborhood,
+  zipCode,
+  complement,
+  city,
+  street,
+  fu,
 }
 ```
 
