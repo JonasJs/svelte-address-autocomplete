@@ -38,7 +38,9 @@ An example of how to use the library:
 **[Simple Example Repl](https://svelte.dev/repl/14fe0372c4c14fb6aebf4cb7092b8063?version=3.22.2)**
 
 ```js
-<script>import AdressAutocomplete from "svelte-address-autocomplete";</script>
+<script>
+  import AdressAutocomplete from "svelte-address-autocomplete"
+</script>
 ```
 
 ```html
