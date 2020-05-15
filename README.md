@@ -33,41 +33,28 @@ yarn install && yarn start
 
 An example of how to use the library:
 
-```js
-<script>
-  import AdressAutocomplete from "svelte-address-autocomplete";
-  let adress = {};
+**[Complex example Repl](https://svelte.dev/repl/7bcbc763ca264c3cb9eb2a3ac790b705?version=3.22.2)**
 
-  function handleCallback({detail}) {
-    if(detail.data){
-      adress = detail.data;
-    } else {
-      alert("Zip not found!");
-    }
-  }
-</script>
+**[Simple Example Repl](https://svelte.dev/repl/14fe0372c4c14fb6aebf4cb7092b8063?version=3.22.2)**
+
+```js
+<script>import AdressAutocomplete from "svelte-address-autocomplete";</script>
 ```
 
 ```html
 <div class="form">
   <h1>Svelte Adress Autocomplete</h1>
-  <AdressAutocomplete on:callback="{handleCallback}" ClassName="newName">
-    <div class="form-group">
-      <label>Rua: </label>
-      <input type="text" name="rua" bind:value="{adress.street}" />
-    </div>
+  <AdressAutocomplete className="newName" let:data let:onBlur>
+    <label>Postal Code</label>
+    <input type="text" on:blur="{onBlur}" />
+    <h4>{data ? data.street : 'No address'}</h4>
   </AdressAutocomplete>
 </div>
 ```
 
 ```css
 <style>
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 16px;
-  }
-  .form :global(.form-group label) {
+  label {
     margin-bottom: 8px;
   }
 </style>
@@ -86,6 +73,14 @@ Component props:
 | Prop     | Type | Description                       |
 | -------- | ---- | --------------------------------- |
 | callback | func | callback with address information |
+
+### Address Informations
+
+```js
+{
+  neighborhood, zipCode, complement, city, street, fu;
+}
+```
 
 ## Slot Properties
 
