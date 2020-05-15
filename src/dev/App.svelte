@@ -41,9 +41,9 @@
       alert("Zip not found!");
     }
   }
-
-  
+    
 </script>
+
 
 <main class="container">
   <div class="content">
@@ -55,21 +55,27 @@
 
     <div class="form-container">
       <h1 class="title">Customer Information</h1>
-      <AdressAutocomplete on:callback={handleCallback} ClassName="newName"  let:onBlur zipCode={address.zipCode}>
+      <AdressAutocomplete on:callback={handleCallback} className="newName" let:onBlur>
         <div class="row">
-          <Input label="First name" bind:value={infos.firstName} />
-          <Input label="Last Name" bind:value={infos.lastName} />
+          <Input label="First name" value={infos.firstName}/>
+          <Input label="Last Name" value={infos.lastName} />
         </div>
         <div class="row">
-          <Input type="select" label="Country" bind:value={infos.country} />
-          <Input label="Postal Code" bind:value={address.zipCode} on:blur={onBlur} />
+          <Input type="select" label="Country" value={infos.country} />
+          <Input label="Postal Code" on:blur={onBlur} placeholder="ZipCode"/>
         </div>
-        <Input label="Address" bind:value={address.street} />
+        <Input label="Address" value={address.street} />
         <div class="row">
-          <Input label="City" bind:value={address.city}/>
-          <Input label="Neighborhood" bind:value={address.neighborhood}/>
+          <Input label="City" value={address.city}/>
+          <Input label="Neighborhood" value={address.neighborhood}/>
         </div>
       </AdressAutocomplete>
+    </div>
+    <div class="buttons">
+      <button><img src="./assets/images/icon.png" alt="Return to Shop" />Return to Shop</button>
+      <button class="primary">
+        Continue to Shipping
+      </button>
     </div>
   </div>
   <div class="cart">
@@ -96,9 +102,9 @@
           <span>{total}</span>
         </div>
       </div>
-      
     </div>
   </div>
+
 </main>
 
 <style>
@@ -204,11 +210,82 @@
     font-size: 24px;
     line-height: 24px;
     color: #1B2125;
-    margin-top: 32px;
   }
 
-  @media (min-width:801px) {
+  button {
+    background: none;
+    border: 0;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    color: #788995;
+  }
 
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 88px;
+    margin-bottom: 48px;
+  }
+  button img {
+    margin-right: 8px;
+  }
+
+  .primary {
+    background: #0077E2;
+    box-shadow: 0px 2px 7px rgba(120, 137, 149, 0.254784);
+    border-radius: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 18px 44px;
+  }
+
+  @media (max-width:860px) {
+    .cart {
+      display: none;
+    } 
+  }
+
+  @media (max-width:600px) {
+    .content .header :global(.tab:not(:first-child)) {
+      display: none;
+    }
+    .container .header :global(.tab) {
+      max-width: 100%;
+      
+    }
+
+    .row :global(.form-group:not(:last-child)) {
+      padding-right: 4px;
+    }
+    .row :global(.form-group:last-child){
+      padding-left: 4px;
+    }
+  }
+
+  @media (max-width: 430px) {
+    .content {
+      margin-top: 40px;
+    }
+    .buttons {
+      margin-top: 32px;
+      margin-bottom: 48px;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+    .primary {
+      width: 100%;      
+      margin-bottom: 32px;
+    } 
+  }
+
+  @media (max-width: 390px) {
+    .row {
+      flex-direction: column;
+    } 
   }
 
 </style>
