@@ -12,7 +12,7 @@ Adress Autocomplete Component to Svelte
 ```
 npm i svelte-address-autocomplete
 // OR
-yarn add svelte-address-autocomplete
+yarn add svelte-address-autocomplete  
 ```
 
 <em>Note: to use this library in sapper, install as devDependency. See the [link](https://github.com/sveltejs/sapper-template#using-external-components).</em>
